@@ -13,6 +13,9 @@
 		5EDE663B26E7C49C00DB71C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE663926E7C49C00DB71C0 /* Main.storyboard */; };
 		5EDE663D26E7C49E00DB71C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE663C26E7C49E00DB71C0 /* Assets.xcassets */; };
 		5EDE664026E7C49E00DB71C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE663E26E7C49E00DB71C0 /* LaunchScreen.storyboard */; };
+		5EDE664826E7C4CD00DB71C0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE664726E7C4CD00DB71C0 /* README.md */; };
+		5EDE664A26E7C4FB00DB71C0 /* License in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE664926E7C4FB00DB71C0 /* License */; };
+		5EDE664C26E7C53700DB71C0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE664B26E7C53700DB71C0 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		5EDE663C26E7C49E00DB71C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EDE663F26E7C49E00DB71C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5EDE664126E7C49E00DB71C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EDE664726E7C4CD00DB71C0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5EDE664926E7C4FB00DB71C0 /* License */ = {isa = PBXFileReference; lastKnownFileType = text; path = License; sourceTree = "<group>"; };
+		5EDE664B26E7C53700DB71C0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,9 @@
 		5EDE662726E7C49C00DB71C0 = {
 			isa = PBXGroup;
 			children = (
+				5EDE664B26E7C53700DB71C0 /* .gitignore */,
+				5EDE664926E7C4FB00DB71C0 /* License */,
+				5EDE664726E7C4CD00DB71C0 /* README.md */,
 				5EDE663226E7C49C00DB71C0 /* HotelRegistration */,
 				5EDE663126E7C49C00DB71C0 /* Products */,
 			);
@@ -126,6 +135,9 @@
 			files = (
 				5EDE664026E7C49E00DB71C0 /* LaunchScreen.storyboard in Resources */,
 				5EDE663D26E7C49E00DB71C0 /* Assets.xcassets in Resources */,
+				5EDE664826E7C4CD00DB71C0 /* README.md in Resources */,
+				5EDE664A26E7C4FB00DB71C0 /* License in Resources */,
+				5EDE664C26E7C53700DB71C0 /* .gitignore in Resources */,
 				5EDE663B26E7C49C00DB71C0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
