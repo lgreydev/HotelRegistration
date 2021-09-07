@@ -15,6 +15,7 @@
 		5EDE664826E7C4CD00DB71C0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE664726E7C4CD00DB71C0 /* README.md */; };
 		5EDE664A26E7C4FB00DB71C0 /* License in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE664926E7C4FB00DB71C0 /* License */; };
 		5EDE664C26E7C53700DB71C0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE664B26E7C53700DB71C0 /* .gitignore */; };
+		5EDE664F26E7C82000DB71C0 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE664E26E7C82000DB71C0 /* Registration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5EDE664726E7C4CD00DB71C0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5EDE664926E7C4FB00DB71C0 /* License */ = {isa = PBXFileReference; lastKnownFileType = text; path = License; sourceTree = "<group>"; };
 		5EDE664B26E7C53700DB71C0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5EDE664E26E7C82000DB71C0 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		5EDE663226E7C49C00DB71C0 /* HotelRegistration */ = {
 			isa = PBXGroup;
 			children = (
+				5EDE664D26E7C7F200DB71C0 /* Model */,
 				5EDE663326E7C49C00DB71C0 /* AppDelegate.swift */,
 				5EDE663526E7C49C00DB71C0 /* SceneDelegate.swift */,
 				5EDE663926E7C49C00DB71C0 /* Main.storyboard */,
@@ -71,6 +74,14 @@
 				5EDE664126E7C49E00DB71C0 /* Info.plist */,
 			);
 			path = HotelRegistration;
+			sourceTree = "<group>";
+		};
+		5EDE664D26E7C7F200DB71C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EDE664E26E7C82000DB71C0 /* Registration.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EDE663426E7C49C00DB71C0 /* AppDelegate.swift in Sources */,
+				5EDE664F26E7C82000DB71C0 /* Registration.swift in Sources */,
 				5EDE663626E7C49C00DB71C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
