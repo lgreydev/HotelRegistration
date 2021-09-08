@@ -19,6 +19,6 @@ struct Registration {
     var numberOfAdults: Int
     var numberOfChildren: Int
     
-    var roomType: Bool
+    var roomType: RoomType
     var wifi: Bool
 }
