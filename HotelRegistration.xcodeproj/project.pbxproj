@@ -17,6 +17,7 @@
 		5EDE664C26E7C53700DB71C0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE664B26E7C53700DB71C0 /* .gitignore */; };
 		5EDE664F26E7C82000DB71C0 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE664E26E7C82000DB71C0 /* Registration.swift */; };
 		5EDE665126E9035E00DB71C0 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE665026E9035E00DB71C0 /* RoomType.swift */; };
+		5EF6668726ED0B230069C9AC /* RegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6668626ED0B230069C9AC /* RegistrationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5EDE664B26E7C53700DB71C0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5EDE664E26E7C82000DB71C0 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		5EDE665026E9035E00DB71C0 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
+		5EF6668626ED0B230069C9AC /* RegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,24 +69,49 @@
 		5EDE663226E7C49C00DB71C0 /* HotelRegistration */ = {
 			isa = PBXGroup;
 			children = (
-				5EDE664D26E7C7F200DB71C0 /* Model */,
-				5EDE663326E7C49C00DB71C0 /* AppDelegate.swift */,
-				5EDE663526E7C49C00DB71C0 /* SceneDelegate.swift */,
-				5EDE663926E7C49C00DB71C0 /* Main.storyboard */,
-				5EDE663C26E7C49E00DB71C0 /* Assets.xcassets */,
-				5EDE663E26E7C49E00DB71C0 /* LaunchScreen.storyboard */,
-				5EDE664126E7C49E00DB71C0 /* Info.plist */,
+				5EF6668526ED0AE20069C9AC /* Controllers */,
+				5EF6668226ED093C0069C9AC /* Stroryboards */,
+				5EDE664D26E7C7F200DB71C0 /* Models */,
+				5EF6668426ED0A530069C9AC /* Application */,
 			);
 			path = HotelRegistration;
 			sourceTree = "<group>";
 		};
-		5EDE664D26E7C7F200DB71C0 /* Model */ = {
+		5EDE664D26E7C7F200DB71C0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				5EDE664E26E7C82000DB71C0 /* Registration.swift */,
 				5EDE665026E9035E00DB71C0 /* RoomType.swift */,
 			);
-			path = Model;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5EF6668226ED093C0069C9AC /* Stroryboards */ = {
+			isa = PBXGroup;
+			children = (
+				5EDE663926E7C49C00DB71C0 /* Main.storyboard */,
+				5EDE663E26E7C49E00DB71C0 /* LaunchScreen.storyboard */,
+			);
+			path = Stroryboards;
+			sourceTree = "<group>";
+		};
+		5EF6668426ED0A530069C9AC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5EDE663326E7C49C00DB71C0 /* AppDelegate.swift */,
+				5EDE663526E7C49C00DB71C0 /* SceneDelegate.swift */,
+				5EDE663C26E7C49E00DB71C0 /* Assets.xcassets */,
+				5EDE664126E7C49E00DB71C0 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5EF6668526ED0AE20069C9AC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EF6668626ED0B230069C9AC /* RegistrationTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +190,7 @@
 				5EDE665126E9035E00DB71C0 /* RoomType.swift in Sources */,
 				5EDE663426E7C49C00DB71C0 /* AppDelegate.swift in Sources */,
 				5EDE664F26E7C82000DB71C0 /* Registration.swift in Sources */,
+				5EF6668726ED0B230069C9AC /* RegistrationTableViewController.swift in Sources */,
 				5EDE663626E7C49C00DB71C0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGVM9RAH4N;
-				INFOPLIST_FILE = HotelRegistration/Info.plist;
+				INFOPLIST_FILE = HotelRegistration/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,7 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGVM9RAH4N;
-				INFOPLIST_FILE = HotelRegistration/Info.plist;
+				INFOPLIST_FILE = HotelRegistration/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
