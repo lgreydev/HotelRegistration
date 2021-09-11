@@ -21,4 +21,17 @@ struct Registration {
     
     var wifi: Bool
     var roomType: RoomType
+    
+    init() {
+        firstName = String()
+        lastName = String()
+        emailAddress = String()
+        checkInDate = Date()
+        checkOutDate = Date()
+        numberOfAdults = Int()
+        numberOfChildren = Int()
+        wifi = Bool()
+        roomType = RoomType.init(id: Int(), name: String(), shortName: String(), price: Int())
+    }
 }
+
