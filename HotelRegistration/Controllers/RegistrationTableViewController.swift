@@ -18,6 +18,12 @@ class RegistrationTableViewController: UITableViewController {
     @IBOutlet weak var checkInDatePicker: UIDatePicker!
     @IBOutlet weak var checkOutDatePicker: UIDatePicker!
     
+    // MARK: Private Properties
+    private var isCheckInDatePickerShown = false
+    private var isCheckOutDatePickerShown = false
+    let checkInDatePickerIndexPath = IndexPath(row: 1, section: 1)
+    let checkOutDatePickerIndexPath = IndexPath(row: 3, section: 1)
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         configureDatePicker()
@@ -56,4 +62,18 @@ class RegistrationTableViewController: UITableViewController {
         print(registration)
     }
     
+}
+
+
+extension RegistrationTableViewController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath {
+        case checkInDatePickerIndexPath:
+            return isCheckInDatePickerShown ? UITableView.automaticDimension : 0
+        case checkOutDatePickerIndexPath:
+            return isCheckOutDatePickerShown ? UITableView.automaticDimension : 0
+        default:
+            return UITableView.automaticDimension
+        }
+    }
 }
