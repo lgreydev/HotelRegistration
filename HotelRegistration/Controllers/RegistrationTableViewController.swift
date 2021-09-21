@@ -19,10 +19,16 @@ class RegistrationTableViewController: UITableViewController {
     @IBOutlet weak var checkOutDatePicker: UIDatePicker!
     
     // MARK: Private Properties
-    private var isCheckInDatePickerShown = false
-    private var isCheckOutDatePickerShown = false
-    let checkInDatePickerIndexPath = IndexPath(row: 1, section: 1)
-    let checkOutDatePickerIndexPath = IndexPath(row: 3, section: 1)
+    private var isCheckInDatePickerShown = false {
+        didSet { checkInDatePicker.isHidden = !isCheckInDatePickerShown }
+    }
+    private var isCheckOutDatePickerShown = false {
+        didSet { checkOutDatePicker.isHidden = !isCheckOutDatePickerShown }
+    }
+    private var checkInDateLabelIndexPath = IndexPath(row: 0, section:1)
+    private let checkInDatePickerIndexPath = IndexPath(row: 1, section: 1)
+    private var checkOutDateLabelIndexPath = IndexPath(row: 2, section: 1)
+    private let checkOutDatePickerIndexPath = IndexPath(row: 3, section: 1)
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -44,7 +50,7 @@ class RegistrationTableViewController: UITableViewController {
         checkInDatePicker.minimumDate = midnightToday
         checkOutDatePicker.minimumDate = checkInDatePicker.date.addingTimeInterval(60 * 60 * 24)
     }
-        
+    
     // MARK: - IBAction
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         configureDatePicker()
@@ -58,13 +64,11 @@ class RegistrationTableViewController: UITableViewController {
         registration.emailAddress = emailAddressTextField.text!
         registration.checkInDate = checkInDatePicker.date
         registration.checkOutDate = checkOutDatePicker.date
-        
-        print(registration)
+        print(#line, registration)
     }
-    
 }
 
-
+// MARK: - UITableViewDataSource
 extension RegistrationTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath {
@@ -75,5 +79,22 @@ extension RegistrationTableViewController {
         default:
             return UITableView.automaticDimension
         }
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension RegistrationTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath {
+        case checkInDateLabelIndexPath:
+            isCheckInDatePickerShown.toggle()
+            isCheckOutDatePickerShown = false
+        case checkOutDateLabelIndexPath:
+            isCheckOutDatePickerShown.toggle()
+            isCheckInDatePickerShown = false
+        default:
+            break
+        }
+        tableView.reloadData()
     }
 }
