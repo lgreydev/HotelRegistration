@@ -64,7 +64,7 @@ class RegistrationTableViewController: UITableViewController {
         registration.emailAddress = emailAddressTextField.text!
         registration.checkInDate = checkInDatePicker.date
         registration.checkOutDate = checkOutDatePicker.date
-        print(#line)
+        print(#line, registration)
     }
 }
 
