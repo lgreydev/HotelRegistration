@@ -9,12 +9,24 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
+    // List of known shortcut actions.
     enum ActionType: String {
         case searchAction = "SearchAction"
         case shareAction = "ShareAction"
     }
     
     var window: UIWindow?
+    var savedShortCutItem: UIApplicationShortcutItem!
+    
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        /** Process the quick action if the user selected one to launch the app.
+            Grab a reference to the shortcutItem to use in the scene.
+        */
+        if let shortcutItem = connectionOptions.shortcutItem {
+            // Save it off for later when we become active.
+            savedShortCutItem = shortcutItem
+        }
+    }
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -24,8 +36,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        if savedShortCutItem != nil {
+            _ = handleShortCutItem(shortcutItem: savedShortCutItem)
+        }
+    }
+    
+    func windowScene(_ windowScene: UIWindowScene,
+                     performActionFor shortcutItem: UIApplicationShortcutItem,
+                     completionHandler: @escaping (Bool) -> Void) {
+        let handled = handleShortCutItem(shortcutItem: shortcutItem)
+        completionHandler(handled)
     }
     
     func sceneWillResignActive(_ scene: UIScene) {
@@ -44,6 +64,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
     
+    func handleShortCutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        /** In this sample an alert is being shown to indicate that the action has been triggered,
+         but in real code the functionality for the quick action would be triggered.
+         */
+        if let actionTypeValue = ActionType(rawValue: shortcutItem.type) {
+            switch actionTypeValue {
+            case .searchAction:
+                print("searchAction")
+            case .shareAction:
+                print("shareAction")
+            }
+        }
+        return true
+    }
     
 }
 
