@@ -210,7 +210,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJ2-tv-Q67">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJ2-tv-Q67" userLabel="NumbersOfAdultsLabel">
                                                             <rect key="frame" x="198" y="0.0" width="50" height="32"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="Iam-jm-yea"/>
@@ -219,8 +219,11 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="yzU-0e-Qzs">
+                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="yzU-0e-Qzs" userLabel="NumbersOfAdultsStepper">
                                                             <rect key="frame" x="256" y="0.0" width="94" height="32"/>
+                                                            <connections>
+                                                                <action selector="stepperValueChanged:" destination="Zqs-ql-IKj" eventType="valueChanged" id="fln-Uc-Oo5"/>
+                                                            </connections>
                                                         </stepper>
                                                     </subviews>
                                                     <constraints>
@@ -251,7 +254,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGS-qm-cSQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGS-qm-cSQ" userLabel="NumbersOfChildrenLabel">
                                                             <rect key="frame" x="198" y="0.0" width="50" height="32"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="50" id="J0t-LD-OmD"/>
@@ -260,8 +263,11 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="i9W-fp-sUe">
+                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="i9W-fp-sUe" userLabel="NumbersOfChildrenStepper">
                                                             <rect key="frame" x="256" y="0.0" width="94" height="32"/>
+                                                            <connections>
+                                                                <action selector="stepperValueChanged:" destination="Zqs-ql-IKj" eventType="valueChanged" id="MAW-vb-PZL"/>
+                                                            </connections>
                                                         </stepper>
                                                     </subviews>
                                                     <constraints>
@@ -300,6 +306,10 @@
                         <outlet property="emailAddressTextField" destination="6kG-3e-vgS" id="jyd-1q-MjN"/>
                         <outlet property="firstNameTextField" destination="rda-o9-URT" id="pMD-yw-MUP"/>
                         <outlet property="lastNameTextField" destination="rvJ-wX-lcx" id="50t-ay-h6v"/>
+                        <outlet property="numberOfAdultsLabel" destination="AJ2-tv-Q67" id="r1F-xb-wlV"/>
+                        <outlet property="numberOfAdultsStepper" destination="yzU-0e-Qzs" id="j3R-67-Rvf"/>
+                        <outlet property="numberOfChildrenLabel" destination="aGS-qm-cSQ" id="Zom-3F-WtE"/>
+                        <outlet property="numberOfChildrenStepper" destination="i9W-fp-sUe" id="9UF-pd-QmW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfp-QB-LU4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

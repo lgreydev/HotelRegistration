@@ -17,6 +17,10 @@ class RegistrationTableViewController: UITableViewController {
     @IBOutlet weak var checkOutDateLabel: UILabel!
     @IBOutlet weak var checkInDatePicker: UIDatePicker!
     @IBOutlet weak var checkOutDatePicker: UIDatePicker!
+    @IBOutlet weak var numberOfAdultsLabel: UILabel!
+    @IBOutlet weak var numberOfAdultsStepper: UIStepper!
+    @IBOutlet weak var numberOfChildrenLabel: UILabel!
+    @IBOutlet weak var numberOfChildrenStepper: UIStepper!
     
     // MARK: Private Properties
     private var isCheckInDatePickerShown = false {
@@ -34,9 +38,17 @@ class RegistrationTableViewController: UITableViewController {
     override func viewDidLoad() {
         configureDatePicker()
         updateDateView()
+        updateNumberOfGuests()
     }
     
     // MARK: - Private Methods
+    private func updateNumberOfGuests() {
+        let numberOfAdults = Int(numberOfAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
+        numberOfAdultsLabel.text = String(numberOfAdults)
+        numberOfChildrenLabel.text = String(numberOfChildren)
+    }
+    
     private func updateDateView() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -52,6 +64,10 @@ class RegistrationTableViewController: UITableViewController {
     }
     
     // MARK: - IBAction
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        updateNumberOfGuests()
+    }
+    
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         configureDatePicker()
         updateDateView()
@@ -64,6 +80,8 @@ class RegistrationTableViewController: UITableViewController {
         registration.emailAddress = emailAddressTextField.text!
         registration.checkInDate = checkInDatePicker.date
         registration.checkOutDate = checkOutDatePicker.date
+        registration.numberOfAdults = Int(numberOfAdultsStepper.value)
+        registration.numberOfChildren = Int(numberOfChildrenStepper.value)
         print(#line, registration)
     }
 }
