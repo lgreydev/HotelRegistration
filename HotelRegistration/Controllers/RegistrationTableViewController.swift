@@ -21,6 +21,7 @@ class RegistrationTableViewController: UITableViewController {
     @IBOutlet weak var numberOfAdultsStepper: UIStepper!
     @IBOutlet weak var numberOfChildrenLabel: UILabel!
     @IBOutlet weak var numberOfChildrenStepper: UIStepper!
+    @IBOutlet weak var wifiSwitch: UISwitch!
     
     // MARK: Private Properties
     private var isCheckInDatePickerShown = false {
@@ -82,6 +83,7 @@ class RegistrationTableViewController: UITableViewController {
         registration.checkOutDate = checkOutDatePicker.date
         registration.numberOfAdults = Int(numberOfAdultsStepper.value)
         registration.numberOfChildren = Int(numberOfChildrenStepper.value)
+        registration.wifi = wifiSwitch.isOn
         print(#line, registration)
     }
 }
