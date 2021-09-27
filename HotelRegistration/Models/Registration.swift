@@ -31,7 +31,7 @@ struct Registration {
         numberOfAdults = Int()
         numberOfChildren = Int()
         wifi = Bool()
-        roomType = RoomType.init(id: Int(), name: String(), shortName: String(), price: Int())
+        roomType = RoomType()
     }
 }
 

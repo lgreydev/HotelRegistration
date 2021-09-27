@@ -22,6 +22,9 @@ class RegistrationTableViewController: UITableViewController {
     @IBOutlet weak var numberOfChildrenLabel: UILabel!
     @IBOutlet weak var numberOfChildrenStepper: UIStepper!
     @IBOutlet weak var wifiSwitch: UISwitch!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var roomControl: UISegmentedControl!
+    @IBOutlet weak var priceWifiLabel: UILabel!
     
     // MARK: Private Properties
     private var isCheckInDatePickerShown = false {
@@ -34,6 +37,8 @@ class RegistrationTableViewController: UITableViewController {
     private let checkInDatePickerIndexPath = IndexPath(row: 1, section: 1)
     private var checkOutDateLabelIndexPath = IndexPath(row: 2, section: 1)
     private let checkOutDatePickerIndexPath = IndexPath(row: 3, section: 1)
+    private let allRoomPrice = RoomType.all
+    private let priceWifi = 10
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -56,6 +61,8 @@ class RegistrationTableViewController: UITableViewController {
         dateFormatter.locale = Locale.current
         checkInDateLabel.text = dateFormatter.string(from: checkInDatePicker.date)
         checkOutDateLabel.text = dateFormatter.string(from: checkOutDatePicker.date)
+        wifiSwitch.isOn = false
+        priceWifiLabel.text = String(priceWifi) + "$"
     }
     
     private func configureDatePicker() {
@@ -65,6 +72,21 @@ class RegistrationTableViewController: UITableViewController {
     }
     
     // MARK: - IBAction
+    @IBAction func switchAction(_ sender: UISwitch) {
+        let priceWifi = sender.isOn ? priceWifi : 0
+        let indexSegment = roomControl.selectedSegmentIndex
+        priceLabel.text = String(allRoomPrice[indexSegment].price + priceWifi) + "$"
+    }
+    
+    @IBAction func chooseRooms(_ sender: UISegmentedControl) {
+        let indexSegment = sender.selectedSegmentIndex
+        if wifiSwitch.isOn {
+            priceLabel.text = String(allRoomPrice[indexSegment].price + priceWifi) + "$"
+        } else {
+            priceLabel.text = String(allRoomPrice[indexSegment].price) + "$"
+        }
+    }
+    
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         updateNumberOfGuests()
     }
@@ -85,6 +107,7 @@ class RegistrationTableViewController: UITableViewController {
         registration.numberOfChildren = Int(numberOfChildrenStepper.value)
         registration.wifi = wifiSwitch.isOn
         print(#line, registration)
+        print(#line, registration.roomType.name)
     }
 }
 
