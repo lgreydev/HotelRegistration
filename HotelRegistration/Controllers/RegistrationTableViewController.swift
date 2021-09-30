@@ -39,6 +39,7 @@ class RegistrationTableViewController: UITableViewController {
     private let checkOutDatePickerIndexPath = IndexPath(row: 3, section: 1)
     private let allRoomPrice = RoomType.all
     private let priceWifi = 10
+    private var registration = Registration()
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -71,6 +72,20 @@ class RegistrationTableViewController: UITableViewController {
         checkOutDatePicker.minimumDate = checkInDatePicker.date.addingTimeInterval(60 * 60 * 24)
     }
     
+    private func alertMessage() {
+        var textTitle = ""
+        var textMessage = ""
+        
+        if registration.firstName.isEmpty {
+            textTitle = "Enter your Name!"
+            textMessage = "'Name' field is must be filled!"
+        }
+        
+        let alert = UIAlertController(title: textTitle, message: textMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
     // MARK: - IBAction
     @IBAction func switchAction(_ sender: UISwitch) {
         let priceWifi = sender.isOn ? priceWifi : 0
@@ -97,7 +112,6 @@ class RegistrationTableViewController: UITableViewController {
     }
     
     @IBAction func doneBarButtonTapped(_ sender: UIBarButtonItem) {
-        var registration = Registration()
         registration.firstName = firstNameTextField.text!
         registration.lastName = lastNameTextField.text!
         registration.emailAddress = emailAddressTextField.text!
@@ -106,8 +120,12 @@ class RegistrationTableViewController: UITableViewController {
         registration.numberOfAdults = Int(numberOfAdultsStepper.value)
         registration.numberOfChildren = Int(numberOfChildrenStepper.value)
         registration.wifi = wifiSwitch.isOn
+        registration.roomType.id = roomControl.selectedSegmentIndex
+        registration.roomType.name = allRoomPrice[roomControl.selectedSegmentIndex].name
+        registration.roomType.price =
+            (allRoomPrice[roomControl.selectedSegmentIndex].price) + (wifiSwitch.isOn ? priceWifi : 0)
+        if registration.firstName.isEmpty { alertMessage() }
         print(#line, registration)
-        print(#line, registration.roomType.name)
     }
 }
 
