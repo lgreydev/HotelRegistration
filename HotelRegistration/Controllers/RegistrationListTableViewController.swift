@@ -9,23 +9,13 @@ import UIKit
 
 class RegistrationListTableViewController: UITableViewController {
     
-   
     var registrationList: [Guest?] = []
-    var closure: (([Guest?]) -> ())?
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        closure?(registrationList)
     }
     
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! RegistrationTableViewController
-        destination.registrationList = registrationList
-    }
- */
+ 
 }
 
 
@@ -38,9 +28,6 @@ extension RegistrationListTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListRooms", for: indexPath)
-        
-        //let guest = registrationList[indexPath]
-        
         cell.textLabel?.text = registrationList[indexPath.row]?.name
         cell.detailTextLabel?.text = registrationList[indexPath.row]?.detail
         return  cell
