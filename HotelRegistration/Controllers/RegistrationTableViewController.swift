@@ -49,6 +49,14 @@ class RegistrationTableViewController: UITableViewController {
         updateNumberOfGuests()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! RegistrationListTableViewController
+        saveData()
+        destination.registrationList = self.registrationList
+        let source = segue.source as! RegistrationTableViewController
+        updateData(data: source)
+    }
+    
     // MARK: - Private Methods
     private func updateNumberOfGuests() {
         let numberOfAdults = Int(numberOfAdultsStepper.value)
@@ -87,44 +95,27 @@ class RegistrationTableViewController: UITableViewController {
         self.present(alert, animated: true)
     }
     
-    func addToRegistrationList() {
-        //registrationList.append(Registration?)
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! RegistrationListTableViewController
-        
-        saveData()
-        destination.registrationList = self.registrationList
-        
-        let source = segue.source as! RegistrationTableViewController
-        updateData(date: source)
-        
-    }
-    
     private func saveData() {
         guard let firstName = firstNameTextField.text else { fatalError() }
         guard let lastName = lastNameTextField.text else { return }
         guard let checkIn = checkInDateLabel.text else { return }
         guard let checkOut = checkOutDateLabel.text else { return }
         guard let price = priceLabel.text else { return }
-        let room = registration.roomType.name
         let newGuest = Guest(
             name: firstName + " " + lastName,
-            detail: checkIn + " – " + checkOut + "\n" + room + "\n" + price
+            detail: checkIn + " – " + checkOut + "\n" + price
         )
         registrationList.append(newGuest)
     }
     
-    private func updateData(date: RegistrationTableViewController) {
-        date.firstNameTextField.text = ""
-        date.lastNameTextField.text = ""
-        date.roomControl.selectedSegmentIndex = 0
-        date.wifiSwitch.isOn = false
-        date.priceLabel.text = String(allRoomPrice[0].price)
+    private func updateData(data: RegistrationTableViewController) {
+        data.firstNameTextField.text = ""
+        data.lastNameTextField.text = ""
+        data.registration.roomType.name = ""
+        data.roomControl.selectedSegmentIndex = 0
+        data.wifiSwitch.isOn = false
+        data.priceLabel.text = String(allRoomPrice[0].price)
     }
-    
     
     // MARK: - IBAction
     @IBAction func switchAction(_ sender: UISwitch) {
@@ -164,10 +155,11 @@ class RegistrationTableViewController: UITableViewController {
         registration.roomType.name = allRoomPrice[roomControl.selectedSegmentIndex].name
         registration.roomType.price =
             (allRoomPrice[roomControl.selectedSegmentIndex].price) + (wifiSwitch.isOn ? priceWifi : 0)
-        if registration.firstName.isEmpty { alertMessage() }
-        
-        performSegue(withIdentifier: "RegistrationList", sender: sender)
-        print(#line, registration)
+        if registration.firstName.isEmpty {
+            alertMessage()
+        } else {
+            performSegue(withIdentifier: "RegistrationList", sender: sender)
+        }
     }
 }
 

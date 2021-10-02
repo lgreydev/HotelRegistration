@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5ED4FE5427085A2400E3B850 /* RegistrationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4FE5327085A2400E3B850 /* RegistrationListTableViewController.swift */; };
+		5ED4FE582709089700E3B850 /* 002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4FE562709089700E3B850 /* 002.jpg */; };
+		5ED4FE592709089700E3B850 /* 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4FE572709089700E3B850 /* 001.jpg */; };
 		5EDE663426E7C49C00DB71C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE663326E7C49C00DB71C0 /* AppDelegate.swift */; };
 		5EDE663626E7C49C00DB71C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE663526E7C49C00DB71C0 /* SceneDelegate.swift */; };
 		5EDE663B26E7C49C00DB71C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE663926E7C49C00DB71C0 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		5ED4FE5327085A2400E3B850 /* RegistrationListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationListTableViewController.swift; sourceTree = "<group>"; };
+		5ED4FE562709089700E3B850 /* 002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 002.jpg; path = ../../../../Downloads/002.jpg; sourceTree = "<group>"; };
+		5ED4FE572709089700E3B850 /* 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 001.jpg; path = ../../../../Downloads/001.jpg; sourceTree = "<group>"; };
 		5EDE663026E7C49C00DB71C0 /* HotelRegistration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelRegistration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDE663326E7C49C00DB71C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDE663526E7C49C00DB71C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,12 +53,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5ED4FE552709087700E3B850 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				5ED4FE572709089700E3B850 /* 001.jpg */,
+				5ED4FE562709089700E3B850 /* 002.jpg */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		5EDE662726E7C49C00DB71C0 = {
 			isa = PBXGroup;
 			children = (
 				5EDE664B26E7C53700DB71C0 /* .gitignore */,
 				5EDE664926E7C4FB00DB71C0 /* License */,
 				5EDE664726E7C4CD00DB71C0 /* README.md */,
+				5ED4FE552709087700E3B850 /* Screenshots */,
 				5EDE663226E7C49C00DB71C0 /* HotelRegistration */,
 				5EDE663126E7C49C00DB71C0 /* Products */,
 			);
@@ -176,10 +190,12 @@
 			files = (
 				5EDE664026E7C49E00DB71C0 /* LaunchScreen.storyboard in Resources */,
 				5EDE663D26E7C49E00DB71C0 /* Assets.xcassets in Resources */,
+				5ED4FE582709089700E3B850 /* 002.jpg in Resources */,
 				5EDE664826E7C4CD00DB71C0 /* README.md in Resources */,
 				5EDE664A26E7C4FB00DB71C0 /* License in Resources */,
 				5EDE664C26E7C53700DB71C0 /* .gitignore in Resources */,
 				5EDE663B26E7C49C00DB71C0 /* Main.storyboard in Resources */,
+				5ED4FE592709089700E3B850 /* 001.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

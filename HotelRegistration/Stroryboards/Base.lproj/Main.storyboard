@@ -431,7 +431,7 @@
             </objects>
             <point key="canvasLocation" x="855.38461538461536" y="-36.255924170616112"/>
         </scene>
-        <!--Registration List-->
+        <!--List Rooms-->
         <scene sceneID="Duy-lJ-n50">
             <objects>
                 <tableViewController id="7TW-J7-541" customClass="RegistrationListTableViewController" customModule="HotelRegistration" customModuleProvider="target" sceneMemberID="viewController">
@@ -441,21 +441,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListRooms" textLabel="qCu-7K-3zc" detailTextLabel="cOo-0W-cgI" style="IBUITableViewCellStyleSubtitle" id="2Ah-4a-n5E">
-                                <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="61.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Ah-4a-n5E" id="GBk-Ud-FmC">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="61.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qCu-7K-3zc">
-                                            <rect key="frame" x="20" y="2" width="35" height="20.333333333333332"/>
+                                            <rect key="frame" x="20" y="7.9999999999999982" width="35" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cOo-0W-cgI">
-                                            <rect key="frame" x="19.999999999999996" y="22.333333333333336" width="43.666666666666664" height="20.333333333333332"/>
+                                            <rect key="frame" x="19.999999999999996" y="31.333333333333336" width="43.666666666666664" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -470,7 +470,7 @@
                             <outlet property="delegate" destination="7TW-J7-541" id="CsF-kz-fvf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Registration List" id="bDV-It-zvf"/>
+                    <navigationItem key="navigationItem" title="List Rooms" largeTitleDisplayMode="always" id="bDV-It-zvf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qR-4Q-B5I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
