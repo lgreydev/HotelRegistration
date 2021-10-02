@@ -424,11 +424,41 @@
                         <outlet property="priceWifiLabel" destination="dBe-Jg-ZsT" id="1pU-9Z-YlJ"/>
                         <outlet property="roomControl" destination="jnl-zc-AcX" id="3Ez-GI-aSw"/>
                         <outlet property="wifiSwitch" destination="ArP-q5-yy0" id="nyv-Vm-9Cj"/>
+                        <segue destination="7TW-J7-541" kind="show" identifier="RegistrationList" id="HoP-wE-Cu5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfp-QB-LU4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="855.38461538461536" y="-36.255924170616112"/>
+        </scene>
+        <!--Registration List-->
+        <scene sceneID="Duy-lJ-n50">
+            <objects>
+                <tableViewController id="7TW-J7-541" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xGO-OR-0Fc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2Ah-4a-n5E">
+                                <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Ah-4a-n5E" id="GBk-Ud-FmC">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7TW-J7-541" id="3lO-i7-cd0"/>
+                            <outlet property="delegate" destination="7TW-J7-541" id="CsF-kz-fvf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Registration List" id="bDV-It-zvf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qR-4Q-B5I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1674" y="-36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vHF-lU-Sa1">

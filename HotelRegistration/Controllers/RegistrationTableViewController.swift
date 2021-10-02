@@ -40,6 +40,7 @@ class RegistrationTableViewController: UITableViewController {
     private let allRoomPrice = RoomType.all
     private let priceWifi = 10
     private var registration = Registration()
+   // private var registrationList: [Registration?]
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -86,6 +87,10 @@ class RegistrationTableViewController: UITableViewController {
         self.present(alert, animated: true)
     }
     
+    func addToRegistrationList() {
+        //registrationList.append(Registration?)
+    }
+    
     // MARK: - IBAction
     @IBAction func switchAction(_ sender: UISwitch) {
         let priceWifi = sender.isOn ? priceWifi : 0
@@ -125,6 +130,9 @@ class RegistrationTableViewController: UITableViewController {
         registration.roomType.price =
             (allRoomPrice[roomControl.selectedSegmentIndex].price) + (wifiSwitch.isOn ? priceWifi : 0)
         if registration.firstName.isEmpty { alertMessage() }
+        
+        performSegue(withIdentifier: "RegistrationList", sender: sender)
+       
         print(#line, registration)
     }
 }
