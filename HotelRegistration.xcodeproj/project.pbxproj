@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5ED4FE5427085A2400E3B850 /* RegistrationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED4FE5327085A2400E3B850 /* RegistrationListTableViewController.swift */; };
-		5ED4FE5C27090BBF00E3B850 /* 002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4FE5A27090BBF00E3B850 /* 002.jpg */; };
-		5ED4FE5D27090BBF00E3B850 /* 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4FE5B27090BBF00E3B850 /* 001.jpg */; };
+		5ED4FE6027090C9500E3B850 /* 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4FE5E27090C9500E3B850 /* 001.jpg */; };
+		5ED4FE6127090C9500E3B850 /* 002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ED4FE5F27090C9500E3B850 /* 002.jpg */; };
 		5EDE663426E7C49C00DB71C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE663326E7C49C00DB71C0 /* AppDelegate.swift */; };
 		5EDE663626E7C49C00DB71C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDE663526E7C49C00DB71C0 /* SceneDelegate.swift */; };
 		5EDE663B26E7C49C00DB71C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDE663926E7C49C00DB71C0 /* Main.storyboard */; };
@@ -25,8 +25,8 @@
 
 /* Begin PBXFileReference section */
 		5ED4FE5327085A2400E3B850 /* RegistrationListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationListTableViewController.swift; sourceTree = "<group>"; };
-		5ED4FE5A27090BBF00E3B850 /* 002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 002.jpg; path = ../../../../../Downloads/002.jpg; sourceTree = "<group>"; };
-		5ED4FE5B27090BBF00E3B850 /* 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 001.jpg; path = ../../../../../Downloads/001.jpg; sourceTree = "<group>"; };
+		5ED4FE5E27090C9500E3B850 /* 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 001.jpg; sourceTree = "<group>"; };
+		5ED4FE5F27090C9500E3B850 /* 002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 002.jpg; sourceTree = "<group>"; };
 		5EDE663026E7C49C00DB71C0 /* HotelRegistration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelRegistration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDE663326E7C49C00DB71C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDE663526E7C49C00DB71C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,18 +53,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5ED4FE552709087700E3B850 /* Screenshots */ = {
+		5ED4FE552709087700E3B850 /* Screenshot */ = {
 			isa = PBXGroup;
 			children = (
-				5ED4FE5B27090BBF00E3B850 /* 001.jpg */,
-				5ED4FE5A27090BBF00E3B850 /* 002.jpg */,
+				5ED4FE5E27090C9500E3B850 /* 001.jpg */,
+				5ED4FE5F27090C9500E3B850 /* 002.jpg */,
 			);
-			path = Screenshots;
+			path = Screenshot;
 			sourceTree = "<group>";
 		};
 		5EDE662726E7C49C00DB71C0 = {
 			isa = PBXGroup;
 			children = (
+				5ED4FE552709087700E3B850 /* Screenshot */,
 				5EDE664B26E7C53700DB71C0 /* .gitignore */,
 				5EDE664926E7C4FB00DB71C0 /* License */,
 				5EDE664726E7C4CD00DB71C0 /* README.md */,
@@ -84,7 +85,6 @@
 		5EDE663226E7C49C00DB71C0 /* HotelRegistration */ = {
 			isa = PBXGroup;
 			children = (
-				5ED4FE552709087700E3B850 /* Screenshots */,
 				5EF6668526ED0AE20069C9AC /* Controllers */,
 				5EF6668226ED093C0069C9AC /* Stroryboards */,
 				5EDE664D26E7C7F200DB71C0 /* Models */,
@@ -188,14 +188,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED4FE6127090C9500E3B850 /* 002.jpg in Resources */,
 				5EDE664026E7C49E00DB71C0 /* LaunchScreen.storyboard in Resources */,
 				5EDE663D26E7C49E00DB71C0 /* Assets.xcassets in Resources */,
 				5EDE664826E7C4CD00DB71C0 /* README.md in Resources */,
+				5ED4FE6027090C9500E3B850 /* 001.jpg in Resources */,
 				5EDE664A26E7C4FB00DB71C0 /* License in Resources */,
 				5EDE664C26E7C53700DB71C0 /* .gitignore in Resources */,
-				5ED4FE5C27090BBF00E3B850 /* 002.jpg in Resources */,
 				5EDE663B26E7C49C00DB71C0 /* Main.storyboard in Resources */,
-				5ED4FE5D27090BBF00E3B850 /* 001.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yahoo-s.lukaschuk.HotelRegistration";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -387,7 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yahoo-s.lukaschuk.HotelRegistration";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
