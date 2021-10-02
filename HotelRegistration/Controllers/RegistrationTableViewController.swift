@@ -40,7 +40,7 @@ class RegistrationTableViewController: UITableViewController {
     private let allRoomPrice = RoomType.all
     private let priceWifi = 10
     private var registration = Registration()
-   // private var registrationList: [Registration?]
+    var registrationList: [Guest?]?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -91,6 +91,32 @@ class RegistrationTableViewController: UITableViewController {
         //registrationList.append(Registration?)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! RegistrationListTableViewController
+        guard let firstName = firstNameTextField.text else { fatalError() }
+        guard let lastName = lastNameTextField.text else { return }
+        guard let checkIn = checkInDateLabel.text else { return }
+        guard let checkOut = checkOutDateLabel.text else { return }
+    
+        let newGuest = Guest(name: firstName + " " + lastName, detail: checkIn + " " + checkOut)
+        
+        destination.closure = { [weak self] guest in
+            self?.registrationList = guest
+            self?.registrationList?.append(newGuest)
+            
+            }
+        
+        destination.registrationList = self.registrationList ?? [nil]
+        
+    
+        print(#line, "count: ", destination.registrationList.count)
+        
+        let source = segue.source as! RegistrationTableViewController
+        source.firstNameTextField.text = "back"
+    }
+    
+    
     // MARK: - IBAction
     @IBAction func switchAction(_ sender: UISwitch) {
         let priceWifi = sender.isOn ? priceWifi : 0
@@ -132,7 +158,7 @@ class RegistrationTableViewController: UITableViewController {
         if registration.firstName.isEmpty { alertMessage() }
         
         performSegue(withIdentifier: "RegistrationList", sender: sender)
-       
+        
         print(#line, registration)
     }
 }

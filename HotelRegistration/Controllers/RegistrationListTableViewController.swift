@@ -10,30 +10,30 @@ import UIKit
 class RegistrationListTableViewController: UITableViewController {
     
    
-    // private var registrationList: [Registration?]
+    var registrationList: [Guest?] = []
+    var closure: (([Guest?]) -> ())?
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        guestName.text = "Guest Name"
-//       guestRoom.text = "Guest Room"
-//
-//        datesOfStay.text = "date - date"
-//
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        closure?(registrationList)
     }
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! RegistrationTableViewController
+        destination.registrationList = registrationList
+    }
+ */
+}
 
-    // MARK: - Table view data source
 
-  
+// MARK: - Table view data source
+extension RegistrationListTableViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
-        return 1 // registrationList.count
+        return registrationList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,10 +41,14 @@ class RegistrationListTableViewController: UITableViewController {
         
         //let guest = registrationList[indexPath]
         
-        cell.textLabel?.text = "Name"
-        cell.detailTextLabel?.text = "detail"
+        cell.textLabel?.text = registrationList[indexPath.row]?.name
+        cell.detailTextLabel?.text = registrationList[indexPath.row]?.detail
         return  cell
     }
+}
 
-    
+
+struct Guest {
+    let name: String
+    let detail: String
 }
