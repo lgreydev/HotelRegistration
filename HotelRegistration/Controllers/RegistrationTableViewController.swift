@@ -95,18 +95,36 @@ class RegistrationTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! RegistrationListTableViewController
         
+        saveData()
+        destination.registrationList = self.registrationList
+        
+        let source = segue.source as! RegistrationTableViewController
+        updateData(date: source)
+        
+    }
+    
+    private func saveData() {
         guard let firstName = firstNameTextField.text else { fatalError() }
         guard let lastName = lastNameTextField.text else { return }
         guard let checkIn = checkInDateLabel.text else { return }
         guard let checkOut = checkOutDateLabel.text else { return }
-        
-        let newGuest = Guest(name: firstName + " " + lastName, detail: checkIn + " " + checkOut)
+        guard let price = priceLabel.text else { return }
+        let room = registration.roomType.name
+        let newGuest = Guest(
+            name: firstName + " " + lastName,
+            detail: checkIn + " – " + checkOut + "\n" + room + "\n" + price
+        )
         registrationList.append(newGuest)
-        destination.registrationList = self.registrationList
-        
-        let source = segue.source as! RegistrationTableViewController
-        source.firstNameTextField.text = "back"
     }
+    
+    private func updateData(date: RegistrationTableViewController) {
+        date.firstNameTextField.text = ""
+        date.lastNameTextField.text = ""
+        date.roomControl.selectedSegmentIndex = 0
+        date.wifiSwitch.isOn = false
+        date.priceLabel.text = String(allRoomPrice[0].price)
+    }
+    
     
     // MARK: - IBAction
     @IBAction func switchAction(_ sender: UISwitch) {
